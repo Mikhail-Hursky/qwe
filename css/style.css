@@ -49,6 +49,7 @@ body {
 .flex_block_links_nav_left {
     align-self: center;
 }
+
 .flex_block_links_nav_left > a,
 .flex_block_links_nav_right > a,
 .block > a {
@@ -67,11 +68,13 @@ body {
 
 
 }
+
 .flex_block_links_nav_left > a:hover,
 .flex_block_links_nav_right > a:hover,
 .block > a:hover {
     background-size: 100% 2px;
 }
+
 .visually-hidden{
     position: absolute;
     clip: rect(0 0 0 0);
@@ -80,6 +83,7 @@ body {
     margin: -1px;
 ...
 }
+
 .header_content > h2 {
     margin: 134px 0 0 5px;
     font-size: 64px;
@@ -233,11 +237,11 @@ strong {
 
 .flex_block_main_left > button {
     margin-top: 16px;
-    margin-left: 3px;
+    margin-left: 1px;
 }
 
 .flex_block_main_right > img {
-    margin: 120px 0 0 125px;
+    margin: 120px 0 0 124px;
 }
 
 .main_3 {
@@ -322,7 +326,7 @@ strong {
     margin-right: 1px;
 }
 
-.current > p {
+.currents > p {
     display: inline-block;
     margin: 0;
     padding: 0;
@@ -334,7 +338,7 @@ strong {
     text-align: center;
 }
 
-.current {
+.currents {
     font-size: 18px;
     font-style: normal;
     font-weight: 500;
@@ -358,7 +362,8 @@ strong {
     cursor: pointer;
 }
 
-#next:hover{
+#next:hover,#prev:hover{
+    opacity: 0.5;
     cursor: pointer;
 }
 
@@ -380,7 +385,6 @@ strong {
     cursor: pointer;
 }
 
-
 .main_4 {
     background: #FFFFFF;
     margin: auto;
@@ -398,7 +402,7 @@ strong {
 
 .main_4_block > img {
     margin-top: 120px;
-    margin-left: 270px;
+    margin-left: 269px;
 }
 
 .main_4_wrapper {
@@ -492,6 +496,7 @@ strong {
 
 .main_5_form > form > div {
     display: flex;
+    margin-top: 1px;
     margin-left: 597px;
 
 }
@@ -542,6 +547,7 @@ strong {
     height: 43px;
     width: 186px;
 }
+
 .main_6_btn a{
     display: flex;
     color: #ffffff;
@@ -577,10 +583,10 @@ strong {
     background: #009CC2;
     border-radius: 0px;
 }
+
 .main_6_apl{
     margin-right: 30px;
 }
-
 
 .footer {
     width: 1600px;
