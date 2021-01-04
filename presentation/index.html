@@ -1,0 +1,268 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+	</head>
+	<body>
+		<div class="reveal">
+		<div class="slides">
+			<section><h1>Inheritance</h1></section>
+			<section>
+				<section><h2>Object</h2></section>
+
+				<section>
+					<h2 data-id="code-title">This is an object</h2>
+					<pre data-id="code-animation">
+							<code class="hljs" data-trim data-line-numbers>
+const Animal = {
+    isHungry: false,
+    howManyLegs: 4
+}
+							</code>
+						</pre>
+				</section>
+				<section>
+					<img src="assets/image/object.svg" alt="">
+				</section>
+			</section>
+			<section>
+				<section><h1>What is a class?</h1></section>
+				<section><img src="https://media.giphy.com/media/jTIDnpgh9iC5sECSwn/giphy.gif" alt=""></section>
+				<section><h1>very difficult ))</h1></section>
+				<section><img src="https://media.giphy.com/media/R9zXHWAHyTjnq/giphy.gif" alt=""></section>
+			</section>
+			<section>
+				<p>ES5 classes</p>
+				<section>
+					<p>function constructor class Transformer</p>
+					<pre data-id="code-animation">
+                    <code class="hljs" data-trim data-line-numbers>
+                        function Transformer(name, isRun) {
+                            this.name = name;
+                            this.isRun = isRun
+                        }
+                    </code>
+                </pre>
+				</section>
+				<section>
+					<p>create Object Transformer</p>
+					<pre data-id="code-animation">
+                    <code class="hljs" data-trim data-line-numbers>
+                        let oleg = new Transformer('oleg', true);
+                    </code>
+                </pre>
+				</section>
+				<section>
+					<p>add method in class Transformer</p>
+					<pre data-id="code-animation">
+                    <code class="hljs" data-trim data-line-numbers>
+                        Transformer.prototype.run = function() {
+                            if (this.isRun) console.log(`${this.name} running`);
+                            else console.log(`${this.name} stay`);
+                        }
+                    </code>
+                </pre>
+				</section>
+				<section>
+					<p>method run()</p>
+					<pre data-id="code-animation">
+                    <code class="hljs" data-trim data-line-numbers>
+                        oleg.run() // oleg running
+                    </code>
+                </pre>
+				</section>
+				<section>
+					<p>Inheritance in ES 5</p>
+					<pre data-id="code-animation">
+                    <code class="hljs" data-trim data-line-numbers>
+                        function extend(Child, Parent) {
+                            Child.prototype = Object.create(Parent.prototype);
+                            Child.prototype.constructor = Child;
+                            Child.superclass = Parent.prototype; // optional
+                        }
+                    </code>
+                </pre>
+					<p>or</p>
+					<pre data-id="code-animation">
+                    <code class="hljs" data-trim data-line-numbers>
+                        Child.prototype = Object.create(Parent.prototype);
+                    </code>
+                </pre>
+				</section>
+				<section>
+					<img src="assets/image/tenor.gif" alt="">
+				</section>
+			</section>
+			<section>
+				<section><p>Classes in ES6</p></section>
+				<section>
+					<h2 data-id="code-title">This is an Class</h2>
+					<pre data-id="code-animation">
+							<code class="hljs" data-trim data-line-numbers>
+                                class Transformer {
+                                    name;
+                                    isRun;
+                                }
+
+
+							</code>
+						</pre>
+				</section>
+				<section>
+					<h2 data-id="code-title">This is an Class</h2>
+					<pre data-id="code-animation">
+							<code class="hljs" data-trim data-line-numbers>
+                                class Transformer {
+                                    name;
+                                    isRun;
+
+                                    constructor(name, isRun) {
+                                        this.name = name;
+                                        this.isRun = isRun;
+                                    }
+                                }
+
+
+							</code>
+						</pre>
+				</section>
+				<section>
+					<h2 data-id="code-title">This is an Class</h2>
+					<pre data-id="code-animation">
+							<code class="hljs" data-trim data-line-numbers>
+                                class Transformer {
+                                    name;
+                                    isRun;
+
+                                    constructor(name, isRun) {
+                                        this.name = name;
+                                        this.isRun = isRun;
+                                    }
+
+                                    run() {
+                                        if (this.isRun) console.log(`${this.name} running`);
+                                        else console.log(`${this.name} stay`);
+                                    }
+                                }
+
+
+							</code>
+						</pre>
+				</section>
+				<section>
+					<h2 data-id="code-title">This is an object</h2>
+					<pre data-id="code-animation">
+							<code class="hljs" data-trim data-line-numbers>
+                                class Transformer {...}
+
+                                const oleg = new Transformer('oleg', true);
+                                const vasya = new Transformer('vasya', false);
+							</code>
+						</pre>
+				</section>
+				<section>
+					<h2 data-id="code-title">This is an object</h2>
+					<pre data-id="code-animation">
+							<code class="hljs" data-trim data-line-numbers>
+                                class Transformer {...}
+
+                                const oleg = new Transformer('oleg', true);
+                                const vasya = new Transformer('vasya', false);
+
+                                oleg.run(); // oleg running
+                                vasya.run(); // vasya stay
+							</code>
+						</pre>
+				</section>
+
+			</section>
+			<section>
+				<section><p>Inheritance</p></section>
+				<section>
+					<h2 data-id="code-title">This is an object</h2>
+					<pre data-id="code-animation">
+							<code class="hljs" data-trim data-line-numbers>
+                                class Transformer {...}
+
+                                class Decepticon extends Transformer {
+                                    constructor(name, isRun) {
+                                        super(name, isRun);
+                                    }
+
+                                    transformation() {
+                                        console.log(`${this.name} transform plane`);
+                                    }
+                                }
+
+                                class Autobot extends Transformer {
+
+                                    constructor(name, isRun) {
+                                        super(name, isRun);
+                                    }
+
+                                    transformation() {
+                                        console.log(`${this.name} transform auto`);
+                                    }
+                                }
+							</code>
+						</pre>
+				</section>
+				<section>
+                <pre data-id="code-animation">
+							<code class="hljs" data-trim data-line-numbers>
+                                class Transformer {...}
+
+                                const oleg = new Decepticon('oleg', true);
+                                const vasya = new Autobot('vasya', false);
+
+                                oleg.run(); // oleg running
+                                vasya.run(); // vasya stay
+
+                                oleg.transformation() //Oleg transform plane
+                                vasya.transformation() //Vasya transform auto
+							</code>
+						</pre>
+
+					<img src="assets/image/happy.gif" alt="">
+				</section>
+			</section>
+			<section>
+				<p>How it looks in Javascript</p>
+				<section><img src="assets/image/prototypes.svg" alt=""></section>
+				<section><img src="assets/image/extends.jpg" alt=""></section>
+			</section>
+			<section>
+				<h1>thanks for watching</h1>
+				<img src="https://i.gifer.com/i74.gif" alt="">
+			</section>
+			</section>
+		</div>
+	</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
